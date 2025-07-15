@@ -1,4 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>demo</artifactId>
@@ -18,4 +21,18 @@
       </plugin>
     </plugins>
   </build>
-</project> 
+
+  <distributionManagement>
+    <repository>
+      <id>internal.repo</id>
+      <name>Internal Releases</name>
+      <url>http://localhost:8081/repository/maven-releases/</url> <!-- Nexus example -->
+    </repository>
+    <snapshotRepository>
+      <id>internal.snapshots</id>
+      <name>Internal Snapshots</name>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+</project>
